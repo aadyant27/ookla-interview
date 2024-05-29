@@ -1,0 +1,13 @@
+# Environment variables
+.env
+# Compiled Python bytecode
+*.pyc
+# Database files
+# *.sqlite3
+# Git files
+.git/
+
+# IDE/development tools
+# Adjust based on your specific tools
+.idea/
+.vscode/
