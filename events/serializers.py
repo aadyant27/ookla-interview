@@ -22,7 +22,7 @@ class EventCreateSerializer(serializers.Serializer):
     event_name = serializers.CharField(max_length=255)
     ticket_price = serializers.DecimalField(max_digits=10, decimal_places=2)
     total_tickets = serializers.IntegerField(min_value=10)
-    available_tickets = serializers.IntegerField(min_value=1)  # TODO:
+    available_tickets = serializers.IntegerField(min_value=1)
     date_of_event = serializers.DateTimeField()
     location = serializers.CharField(max_length=255)
 

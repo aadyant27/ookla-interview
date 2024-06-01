@@ -36,8 +36,6 @@ def get_events(request):
         if request.method == 'GET':
             events = Event.objects.all()
             serializer = EventSerializer(events, many=True)
-            Booking.objects.all().delete()
-            Event.objects.all()
 
             return Response(serializer.data, status=status.HTTP_200_OK)
     except Exception as e:
