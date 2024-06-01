@@ -50,8 +50,17 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    "middleware.rate_limiting_middleware.RateLimitMiddleware"
 ]
 
+# Local Memory Cache for RATE LIMITING
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'rate_limit_cache',
+    }
+}
 ROOT_URLCONF = "ookla_be.urls"
 
 TEMPLATES = [

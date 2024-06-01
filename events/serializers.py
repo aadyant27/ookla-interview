@@ -24,7 +24,7 @@ class EventCreateSerializer(serializers.Serializer):
     total_tickets = serializers.IntegerField(min_value=10)
     available_tickets = serializers.IntegerField(min_value=1)
     date_of_event = serializers.DateTimeField()
-    location = serializers.CharField(max_length=255)
+    place_of_event = serializers.CharField(max_length=50)
 
     def validate(self, data):
         if data['available_tickets'] > data['total_tickets']:

@@ -62,6 +62,9 @@ def get_events(request):
                 total_tickets = serializer.validated_data['total_tickets']
                 available_tickets = serializer.validated_data['available_tickets']
                 date_of_event = serializer.validated_data['date_of_event']
+                location = serializer.validated_data['place_of_event']
+
+                # Restricting events with duplicate location, time
 
                 # GOOGLE GEOCODING to calculate LAT, LONG
                 # ---------------------------------------
@@ -71,7 +74,7 @@ def get_events(request):
                 # print('🔥', geocode_result)
 
                 Event.objects.create(event_name=event_name, ticket_price=ticket_price, total_tickets=total_tickets,
-                                     available_tickets=available_tickets, date_of_event=date_of_event)
+                                     available_tickets=available_tickets, date_of_event=date_of_event, place_of_event=location)
                 return Response({'message': 'Event successfully created'}, status=status.HTTP_201_CREATED)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
