@@ -32,4 +32,8 @@
   4. Booking can only be done by registered users.
   5. Geocode API(Google) to find Latitude, Longitude which can then used by frontend to render Google Maps in frontend
  
+* **FEATURES ADDED POST DEVELOPMENT**
+  1. RATE LIMITING, so that user doesn't spam the APIs and put unnecessary load on the servers
+  2. Dealing with Colliding Events, i.e. restricting user to create a new event, if that event collides with an already existing event(in terms of location & date-time)
+ 
 * Swagger Docs: /api/swagger/
